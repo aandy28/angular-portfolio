@@ -3,9 +3,10 @@ body
   font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3
+h1, h2, h3, h4
 {
   text-align: center;
+  font-family: 'Slabo 27px', serif;
 }
 
 .main-view
@@ -89,6 +90,148 @@ img
     display: inline-block;
     max-width: 100%;
     height: auto;
+}
+
+#work .post-container
+{
+  position:relative;
+  display:inline-block;
+  /*max-width:350px;*/
+}
+
+.private-work-content
+{
+
+  /*max-height:380px;
+  min-height:350px;*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+ 
+}
+
+.custom-hover
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-hover img
+{
+  -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.custom-hover:hover img
+{
+   -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.caption
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.caption > div 
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -15px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.caption .post-title 
+{
+    font-size: 36px;
+    line-height: 1em;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+
+.private-work-content .caption .post-title:before 
+{
+  content: '';
+  width: 90px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -45px;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; 
+  background-color: #ffffff;
+}
+
+.private-work-content .caption .post-title a 
+{
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; 
+}
+
+.private-work-content .caption .post-title a:hover 
+{
+  letter-spacing: 0;
+  color: #dedede; 
+}
+
+.private-work-content .caption .post-content 
+{
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, 150%, 0);
+  transform: translate3d(0, -50%, 0) translate3d(0, 150%, 0);
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease; 
+}
+
+.private-work-content:hover .caption .post-title:before 
+{
+  width: 240px;
+  margin: 0 0 0 -120px; 
+}
+
+.private-work-content:hover .caption .post-content 
+{
+  opacity: 1;
+  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, 100%, 0);
+  transform: translate3d(0, -50%, 0) translate3d(0, 100%, 0);
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease; 
+}
+
+.private-work-content:hover a img 
+{
+  -webkit-transform: scale(1) translatez(0);
+  transform: scale(1) translatez(0);
+  opacity: 0.5; 
 }
 
 @media (min-width: 767px)

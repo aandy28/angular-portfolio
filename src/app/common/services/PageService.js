@@ -39,7 +39,7 @@ function PageService($http, $sce, config) {
      * @returns {*}
      */
     function decorateResult(result) {
-        console.log(result);
+        //console.log(result);
         result.title = $sce.trustAsHtml(result.title.rendered);
         result.excerpt = $sce.trustAsHtml(result.excerpt.rendered);
         result.date = Date.parse(result.date);

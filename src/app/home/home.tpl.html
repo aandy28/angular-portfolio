@@ -33,11 +33,22 @@
 
     <div class="blog-posts-top" id="work">
         <h2>My Work</h2>
-        <ul class="featured-articles">
-            <li ng-repeat="post in vm.featuredPosts">
-                <a ui-sref="post({ id: post.ID, title: post.slug })">{{ post.title }}</a>
-            </li>
-        </ul>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-4 post-container" ng-repeat="post in vm.featuredPosts">
+            <div class="private-work-content custom-hover" >
+              <div class="">
+                <img src="{{post.better_featured_image.source_url}}" />
+              </div>
+              <div class="caption">
+                <div>
+                  <h4 class="post-title">{{ post.title }}</h4>
+                  <div class="post-content part">{{post.content}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
     </div>
 
     <div class="contact-top" id="contact">
@@ -45,7 +56,7 @@
         <!--<div class="post-body" ng-bind-html="vm.post.content"></div>-->
 
         <!-- SHOW ERROR/SUCCESS MESSAGES -->
-      <div id="messages" class="well" ng-show="message"></div>
+      <div id="messages" class="well" ng-show="message">{{message}}</div>
       <!-- FORM -->
       <form ng-submit="processForm()">
          <!-- NAME -->

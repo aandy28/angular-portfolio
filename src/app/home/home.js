@@ -2,12 +2,13 @@
 
 function HomeController(BlogService, PageService, MetadataService, $scope, $http) {
     var vm = this;
-    console.log("here");
+    //console.log("here");
     vm.featuredPosts = [];
     vm.allPages = [];
 
     BlogService.allPosts().then(function(posts) {
         vm.featuredPosts = posts;
+        console.log(posts);
         
     });
 
@@ -18,7 +19,7 @@ function HomeController(BlogService, PageService, MetadataService, $scope, $http
 
     PageService.page(2).then(function(about) {
         vm.about = about;
-        console.log(vm.about);
+        //console.log(vm.about);
 
     });
 
@@ -47,18 +48,34 @@ function HomeController(BlogService, PageService, MetadataService, $scope, $http
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
             })
                 .success(function (data) {
-                    console.log(data);
+                    //console.log("done");
+                    //console.log(data);
+                    //console.log(data.success);
 
                     if (!data.success) {
                         // if not successful, bind errors to error variables
+                        //console.log("errors");
+                        //console.log(data.errors);
+                        
                         $scope.errorName = data.errors.name;
                         $scope.errorSuperhero = data.errors.superheroAlias;
+                        $scope.errorContent = data.errors.content;
+                        $scope.message = data.message;
+
+                        //console.log($scope.errorName);
+                        //console.log($scope.errorSuperhero);
+                        //console.log($scope.errorContent);
                     } 
                     else {
                         // if successful, bind success message to message
+                        //console.log(data);
+                        
                         $scope.message = data.message;
+
+                        //console.log($scope.message);
                     
                     }
+
                 });
 
         };

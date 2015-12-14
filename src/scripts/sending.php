@@ -14,8 +14,12 @@ $data = array(); 		// array to pass back data
 		// if there are items in our errors array, return those errors
 		$data['success'] = false;
 		$data['errors']  = $errors;
+		$data['message'] = 'Something is wrong with the form.';
 		
 	} else {
+		$data['success'] = true;
+		$data['message'] = 'Thank you for sending e-mail.';
+
 		$name = $_POST['name'];
 		$emailAddress = $_POST['superheroAlias'];	
 		$body = $_POST['content'];
@@ -26,16 +30,15 @@ $data = array(); 		// array to pass back data
 		$email_subject = "Contact from portfolio by:  $name";
 		$email_body = "You have received a new message. \n\n".
 						  
-						  "Name: name\n".
+						  "Name: $name\n".
 						  "Email Address: $emailAddress\n".
-						  "Message: $content\n";
-		$headers = "From: info@andysmithdev.co.uk\n";
+						  "Message: $body\n";
+		$headers = "From: ihaveaquestion@andysmithdev.co.uk\n";
 		$headers .= "Reply-To: $emailAddress";	
 		mail($to,$email_subject,$email_body,$headers);
-		$data['success'] = true;
-		$data['message'] = 'Thank you for sending e-mail.';
+		
 
-		return true;			
+					
 		
 	}
 	echo json_encode($data);
