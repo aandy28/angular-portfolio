@@ -1,0 +1,99 @@
+body
+{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3
+{
+  text-align: center;
+}
+
+.main-view
+{
+
+}
+
+.topLine
+{
+  background-color:#000000;
+  min-height:20px;
+}
+
+.topLine:after
+{
+  content:'';
+  height:1px;
+  background-color:#000000;
+  position: absolute;
+  width: 100%;
+  top:20px;
+  margin-top:5px;
+}
+
+.menu
+{
+  border-bottom: 1px solid #cccccc;
+}
+
+.menu ul
+{
+  list-style: none;
+  margin: 0;
+  padding:0;
+  text-align: center;
+}
+
+.menu li
+{
+  line-height:45px;
+  display:inline-block;
+  margin:0 20px;
+  min-width:80px;
+}
+
+.menu li a
+{
+  color:#000000;
+  font-size:1.1em;
+  text-transform: uppercase;
+  font-weight:300;
+}
+
+.hero-box 
+{
+    background-image: url(../assets/images/header.jpg);
+    background-color: #ffffff;
+    background-repeat: repeat;
+    background-position: left;
+    background-attachment: scroll;
+    background-clip: padding-box;
+    background-size: cover;
+    background-origin: padding-box;
+    text-align: center;
+    padding: 183px 0 0 0;
+    min-height: inherit;
+}
+
+.site-title 
+{
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+img 
+{
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 767px)
+{
+  .site-branding {
+      margin-bottom: 215px;
+  }
+}

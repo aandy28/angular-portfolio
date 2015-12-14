@@ -1,0 +1,73 @@
+
+<div class="page-content top" ng-controller="HomeController as vm">
+    <div class="">
+        <div class="hero-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 static-header-logo">
+                        <div class="site-branding">
+                            <h1 class="site-title image-logo">
+                                <img src="assets/images/header-inner.png" alt="Andy Smith Design and Development">
+                            </h1> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu" ng-class="{'show-mobile-menu': vm.showMobileMenu }">
+            <div class="container">
+                <ul>
+                    <li><a scroll-on-click href="#home">Home</a></li>
+                    <li><a scroll-on-click href="#about">About</a></li>
+                    <li><a scroll-on-click href="#work">Work</a></li>
+                    <li><a scroll-on-click href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="info-top" id="about">
+        <h2>About Me</h2>
+        <div class="post-body about-top" ng-bind-html="vm.about.content"></div>
+    </div>
+
+    <div class="blog-posts-top" id="work">
+        <h2>My Work</h2>
+        <ul class="featured-articles">
+            <li ng-repeat="post in vm.featuredPosts">
+                <a ui-sref="post({ id: post.ID, title: post.slug })">{{ post.title }}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="contact-top" id="contact">
+        <h2>Contact Me</h2>
+        <!--<div class="post-body" ng-bind-html="vm.post.content"></div>-->
+
+        <!-- SHOW ERROR/SUCCESS MESSAGES -->
+      <div id="messages" class="well" ng-show="message"></div>
+      <!-- FORM -->
+      <form ng-submit="processForm()">
+         <!-- NAME -->
+         <div id="name-group" class="form-group" ng-class="{ 'has-error' : errorName }">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" placeholder="Batman" ng-model="formData.name">
+            <span class="help-block" ng-show="errorName"></span>
+         </div>
+         <div id="superhero-group" class="form-group" ng-class="{ 'has-error' : errorSuperhero }">
+            <label>Email</label>
+            <input type="email" name="superheroAlias" class="form-control" placeholder="brucewayne@batman.com" ng-model="formData.superheroAlias">
+            <span class="help-block" ng-show="errorSuperhero"></span>
+         </div>
+         <div id="content-group" class="form-group" ng-class="{ 'has-error' : errorContent }">
+            <label>Message</label>
+            <textarea  rows="5" cols="50" class="form-control" placeholder="I am batman" ng-model="formData.content"></textarea>
+            <span class="help-block" ng-show="errorContent"></span>
+         </div>
+         <button type="submit" class="btn btn-success btn-lg btn-block">
+         <span class="glyphicon glyphicon-flash"></span> Submit!
+         </button>
+      </form>
+    </div>
+</div>
+

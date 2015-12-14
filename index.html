@@ -1,0 +1,80 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en" ng-app="app" ng-class="{ 'force-scrollbar' : !isHomePage }"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en" ng-app="app" ng-class="{ 'force-scrollbar' : !isHomePage }"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en" ng-app="app" ng-class="{ 'force-scrollbar' : !isHomePage }"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="app" ng-class="{ 'force-scrollbar' : !isHomePage }"> <!--<![endif]-->
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300, 400,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <base href="/src/">
+
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <!-- metadata -->
+    <title>Andy Smith Development Portfolio</title>
+    <meta name="description" content="Andy Smith Front End Development Portfolio - a place to showcase all I do.">
+    
+    <meta name="author" content="Andy Smith">
+    <!-- Twitter summary card metadata. One day this might be crawled... -->
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+    
+
+</head>
+<body ng-controller="AppController as vm">
+
+<div class="mobile-menu-button">
+    <a href="#" ng-click="vm.toggleMobileMenu($event)">
+        <i class="icon-menu" ng-hide="vm.showMobileMenu"></i>
+        <i class="icon-close" ng-show="vm.showMobileMenu"></i>
+    </a>
+</div>
+
+<div class="menu-view">
+    <div class="topLine"></div>
+
+    <div class="main-view" id="home">
+
+        <div class="content">
+            <div ui-view="main"></div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="scripts/bower_components/angular/angular.js"></script>
+<script src="scripts/bower_components/angular-animate/angular-animate.js"></script>
+<script src="scripts/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="scripts/bower_components/angular-utils-pagination/dirPagination.js"></script>
+<script src="app/app.js"></script>
+<script src="app/common/directives/scrollDirective.js"></script>
+<script src="app/about/about.js"></script>
+<script src="app/blog/blog.js"></script>
+<script src="app/blog/post.js"></script>
+<script src="app/contact/contact.js"></script>
+<script src="app/home/home.js"></script>
+<script src="app/common/filters/decodeHtmlCodes.js"></script>
+<script src="app/common/filters/stripHtmlTags.js"></script>
+<script src="app/common/services/BlogService.js"></script>
+<script src="app/common/services/MetadataService.js"></script>
+<script src="app/common/services/PageService.js"></script>
+<script src="app/common/directives/revealingSearchInput/revealingSearchInput.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script>
+    // Google Analytics code here
+</script>
+</body>
+</html>
