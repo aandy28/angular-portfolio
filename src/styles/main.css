@@ -130,6 +130,7 @@ img
   position:relative;
   padding:0;
   display:inline-block;
+  vertical-align: top;
   /*max-width:350px;*/
 }
 
@@ -153,6 +154,7 @@ img
 
 .custom-hover img
 {
+  vertical-align: top;
   -webkit-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
@@ -178,16 +180,17 @@ img
     right: 0;
     bottom: 0;
     text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+    /*display: table-cell;
+    vertical-align: middle;*/
     /*color: #fff;*/
 }
 
 .caption > div 
 {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     margin-top: 12px;
+    height:100%;
 
     /*position: absolute;
     top: 50%;
@@ -278,8 +281,18 @@ img
 .private-work-content:hover .caption .post-content 
 {
   opacity: 1;
-  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, 100%, 0);
-  transform: translate3d(0, -50%, 0) translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, 150%, 0);
+  transform: translate3d(0, -50%, 0) translate3d(0, 150%, 0);
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease; 
+}
+
+#work .post-container:nth-child(6) .private-work-content:hover .caption .post-content 
+{
+  opacity: 1;
+  -webkit-transform: translate3d(0, -120%, 0) translate3d(0, 150%, 0);
+  transform: translate3d(0, -120%, 0) translate3d(0, 150%, 0);
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease; 
@@ -524,6 +537,48 @@ img
   .private-work-content:hover .caption p
   {
     padding:0 10px;
+    font-size:16px;
+  }
+
+  .latest-work-container
+  {
+    width:50%;
+  }
+
+  .latest-work-container h3
+  {
+    font:bold 18px/1em 'Roboto';
+  }
+
+  .latest-work-container h4
+  {
+    font-size:16px;
+  }
+
+  .caption .post-title
+  {
+    font-size:28px;
+  }
+
+  #work .post-container:nth-child(6) .private-work-content:hover .caption .post-content
+  {
+      -webkit-transform: translate3d(0, -140%, 0) translate3d(0, 150%, 0);
+      transform: translate3d(0, -140%, 0) translate3d(0, 150%, 0);
+  }
+
+  #work .post-container:nth-child(1) .private-work-content:hover .caption .post-content
+  {
+      -webkit-transform: translate3d(0, -120%, 0) translate3d(0, 150%, 0);
+      transform: translate3d(0, -120%, 0) translate3d(0, 150%, 0);
+  }
+
+  h2 
+  {
+    font-size: 36px;
+  }
+  #work .post-container:nth-child(6) .private-work-content:hover .caption .post-content p
+  {
+    font-size:12px;
   }
 }
 
