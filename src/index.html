@@ -23,19 +23,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="styles/iconfontstyles.css">
     <link rel="stylesheet" href="styles/main.css">
     
 
 </head>
 <body ng-controller="AppController as vm">
 
-<div class="mobile-menu-button">
-    <a href="#" ng-click="vm.toggleMobileMenu($event)">
-        <i class="icon-menu" ng-hide="vm.showMobileMenu"></i>
-        <i class="icon-close" ng-show="vm.showMobileMenu"></i>
-    </a>
-</div>
 
 <div class="menu-view">
     <div class="topLine"></div>
@@ -56,6 +50,7 @@
 <script src="scripts/bower_components/angular-utils-pagination/dirPagination.js"></script>
 <script src="app/app.js"></script>
 <script src="app/common/directives/scrollDirective.js"></script>
+<script src="app/common/directives/ng-sticky.js"></script>
 <script src="app/about/about.js"></script>
 <script src="app/blog/blog.js"></script>
 <script src="app/blog/post.js"></script>

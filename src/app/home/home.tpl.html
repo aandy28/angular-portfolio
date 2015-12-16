@@ -1,4 +1,3 @@
-
 <div class="page-content top" ng-controller="HomeController as vm">
     <div class="">
         <div class="hero-box">
@@ -13,72 +12,104 @@
                 </div>
             </div>
         </div>
-        <div class="menu" ng-class="{'show-mobile-menu': vm.showMobileMenu }">
+        <div class="menu" sticky-nav ng-class="{'show-mobile-menu': vm.showMobileMenu }">
             <div class="container">
-                <ul>
-                    <li><a scroll-on-click href="#home">Home</a></li>
-                    <li><a scroll-on-click href="#about">About</a></li>
-                    <li><a scroll-on-click href="#work">Work</a></li>
-                    <li><a scroll-on-click href="#contact">Contact</a></li>
-                </ul>
+                <div class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a scroll-on-click href="#home">Home</a></li>
+                            <li><a scroll-on-click href="#about">About</a></li>
+                            <li><a scroll-on-click href="#work">Work</a></li>
+                            <li><a scroll-on-click href="#cv">C.V.</a></li>
+                            <li><a scroll-on-click href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="container">
-    <div class="info-top" id="about">
+    <div class="info-top margin-bottom" id="about">
         <h2>About Me</h2>
         <div class="post-body about-top" ng-bind-html="vm.about.content"></div>
     </div>
-
-    <div class="blog-posts-top" id="work">
+    <div class="blog-posts-top margin-bottom" id="work">
         <h2>My Work</h2>
+        <p class="center">Creating fully responsive standard based sites to cover all the clients' needs.</p>
         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-4 post-container" ng-repeat="post in vm.featuredPosts">
-            <div class="private-work-content custom-hover" >
-              <div class="">
-                <img src="{{post.better_featured_image.source_url}}" />
-              </div>
-              <div class="caption">
-                <div>
-                  <h4 class="post-title">{{ post.title }}</h4>
-                  <div class="post-content part">{{post.content}}</div>
+            <div class="col-xs-12 col-sm-12 col-md-6 post-container" ng-repeat="post in vm.featuredPosts">
+                <div class="private-work-content custom-hover">
+                    <div class="">
+                        <img src="{{post.better_featured_image.source_url}}" />
+                    </div>
+                    <div class="caption">
+                        <div>
+                            <h4 class="post-title">{{ post.title }}</h4>
+                            <div class="post-content part" ng-bind-html="post.content"></div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        
-    </div>
-
-    <div class="contact-top" id="contact">
-        <h2>Contact Me</h2>
-        <!--<div class="post-body" ng-bind-html="vm.post.content"></div>-->
-
-        <!-- SHOW ERROR/SUCCESS MESSAGES -->
-      <div id="messages" class="well" ng-show="message">{{message}}</div>
-      <!-- FORM -->
-      <form ng-submit="processForm()">
-         <!-- NAME -->
-         <div id="name-group" class="form-group" ng-class="{ 'has-error' : errorName }">
-            <label>Name</label>
-            <input type="text" name="name" class="form-control" placeholder="Batman" ng-model="formData.name">
-            <span class="help-block" ng-show="errorName"></span>
-         </div>
-         <div id="superhero-group" class="form-group" ng-class="{ 'has-error' : errorSuperhero }">
-            <label>Email</label>
-            <input type="email" name="superheroAlias" class="form-control" placeholder="brucewayne@batman.com" ng-model="formData.superheroAlias">
-            <span class="help-block" ng-show="errorSuperhero"></span>
-         </div>
-         <div id="content-group" class="form-group" ng-class="{ 'has-error' : errorContent }">
-            <label>Message</label>
-            <textarea  rows="5" cols="50" class="form-control" placeholder="I am batman" ng-model="formData.content"></textarea>
-            <span class="help-block" ng-show="errorContent"></span>
-         </div>
-         <button type="submit" class="btn btn-success btn-lg btn-block">
-         <span class="glyphicon glyphicon-flash"></span> Submit!
-         </button>
-      </form>
     </div>
 </div>
-
+<div class="current-work row">
+    <h2>Work With Current Employer</h2>
+    <div class="col-xs-4 latest-work-container" ng-repeat="latest in vm.latestPosts">
+        <div class="latest-work-content">
+            <div class="imageBox custom-hover">
+                <img src="{{latest.better_featured_image.source_url}}" alt="{{latest.title}}" />
+            </div>
+            <h3 class="post-title" ng-bind-html="latest.title"></h3>
+            <h4>Customer Site</h4>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="cv-top margin-bottom" id="cv">
+        <div class="post-body cv-top" ng-bind-html="vm.cv.content"></div>
+    </div>
+    <div class="contact-top margin-bottom" id="contact">
+        <h2>Contact Me</h2>
+        <!--<div class="post-body" ng-bind-html="vm.post.content"></div>-->
+        <!-- SHOW ERROR/SUCCESS MESSAGES -->
+        <div id="messages" class="well" ng-show="message">{{message}}</div>
+        <!-- FORM -->
+        <form ng-submit="processForm()">
+            <!-- NAME -->
+            <div id="name-group" class="form-group" ng-class="{ 'has-error' : errorName }">
+                <input type="text" name="name" class="form-control" placeholder="Batman" ng-model="formData.name">
+                <span class="help-block" ng-show="errorName"></span>
+            </div>
+            <div id="superhero-group" class="form-group" ng-class="{ 'has-error' : errorSuperhero }">
+                <input type="email" name="superheroAlias" class="form-control" placeholder="brucewayne@batman.com" ng-model="formData.superheroAlias">
+                <span class="help-block" ng-show="errorSuperhero"></span>
+            </div>
+            <div id="content-group" class="form-group" ng-class="{ 'has-error' : errorContent }">
+                <textarea rows="5" cols="50" class="form-control" placeholder="I am batman" ng-model="formData.content"></textarea>
+                <span class="help-block" ng-show="errorContent"></span>
+            </div>
+            <div class="form-send">
+                <button type="submit" class="btn btn-success btn-lg btn-block">
+                    <span class="glyphicon glyphicon-flash"></span> Submit!
+                </button>
+            </div>
+        </form>
+        <section id="contactFooter" class="clearfix row">
+            <div class="center">
+                <p>Feel free to follow me via <a href="https://twitter.com/Andy85Smith" target="_blank">Twitter</a> or <a href="https://www.linkedin.com/pub/andy-smith/96/308/52" target="_blank">LinkedIn</a></p>
+                <p>Or get in touch through <a href="mailto:infoATandysmithdevDOTcoDOTuk">info@andysmithdev.co.uk</a></p>
+                <img src="http://www.andysmithdev.co.uk/_res/css/images/andy-smith.png" alt="Me">
+            </div>
+        </section>
+    </div>
+</div>

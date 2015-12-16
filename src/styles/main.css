@@ -1,12 +1,35 @@
 body
 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Slabo 27px', serif;
+  color:#7a7a7a;
 }
 
 h1, h2, h3, h4
 {
   text-align: center;
   font-family: 'Slabo 27px', serif;
+  color:#333;
+}
+
+h2
+{
+  font-size:48px;
+}
+
+p, li
+{
+  font-size:18px;
+}
+
+.margin-bottom
+{
+  margin-bottom:25px;
+}
+
+.center
+{
+  text-align: center;
+  margin:15px 0;
 }
 
 .main-view
@@ -33,11 +56,13 @@ h1, h2, h3, h4
 
 .menu
 {
+  
   border-bottom: 1px solid #cccccc;
 }
 
 .menu ul
 {
+  float:none;
   list-style: none;
   margin: 0;
   padding:0;
@@ -46,7 +71,8 @@ h1, h2, h3, h4
 
 .menu li
 {
-  line-height:45px;
+  float:none;
+  line-height:75px;
   display:inline-block;
   margin:0 20px;
   min-width:80px;
@@ -54,10 +80,17 @@ h1, h2, h3, h4
 
 .menu li a
 {
-  color:#000000;
-  font-size:1.1em;
+  color:#828282;
+  font-size:18px;
   text-transform: uppercase;
-  font-weight:300;
+  font-weight:bolder;
+  font-family: 'Roboto', serif;
+}
+
+.menu li a:hover
+{
+  color:#333333;
+  text-decoration: none;
 }
 
 .hero-box 
@@ -95,6 +128,7 @@ img
 #work .post-container
 {
   position:relative;
+  padding:0;
   display:inline-block;
   /*max-width:350px;*/
 }
@@ -146,19 +180,19 @@ img
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-    color: #fff;
+    /*color: #fff;*/
 }
 
 .caption > div 
 {
     display: inline-block;
     vertical-align: middle;
-    margin-top: -15px;
+    margin-top: 12px;
 
-    position: absolute;
+    /*position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
 }
 
 .caption .post-title 
@@ -184,7 +218,23 @@ img
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; 
-  background-color: #ffffff;
+  background-color: #333;
+}
+
+.private-work-content .caption .post-title:after 
+{
+  content: '';
+  width: 90px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin: 0 0 0 -45px;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; 
+  background-color: #333;
 }
 
 .private-work-content .caption .post-title a 
@@ -214,6 +264,14 @@ img
 .private-work-content:hover .caption .post-title:before 
 {
   width: 240px;
+  background-color:#ffffff;
+  margin: 0 0 0 -120px; 
+}
+
+.private-work-content:hover .caption .post-title:after
+{
+  width: 240px;
+  background-color:#ffffff;
   margin: 0 0 0 -120px; 
 }
 
@@ -232,6 +290,241 @@ img
   -webkit-transform: scale(1) translatez(0);
   transform: scale(1) translatez(0);
   opacity: 0.5; 
+}
+
+.private-work-content:hover .caption
+{
+  background:transparent url(../assets/images/content-opacity.png) repeat;
+}
+
+.private-work-content:hover .caption h4, 
+.private-work-content:hover .caption p
+{
+  color:#ffffff;
+} 
+
+.private-work-content:hover .caption p
+{
+  padding:0 20px;
+} 
+
+.all-skills div
+{
+  font-size:20px;
+  margin:20px 0;
+  text-align: center;
+}
+
+.all-skills div i
+{
+  font-size:40px;
+  margin-top:10px;
+  display:block;
+}
+
+#contactFooter
+{
+  margin:25px 0;
+}
+
+.ng-sticky-fixed
+{
+  z-index:100;
+  background-color:#ffffff;
+  top:0;
+  left:0;
+  /*padding:10px 15px;*/
+  position:fixed;
+  height:auto;
+  width:100%;
+}
+
+#contact input, #contact textarea
+{
+    padding: 37px 20px 30px 121px;
+    width: 100%;
+    border: 3px solid #5b5b5b;
+    background: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    border-radius: 0;
+}
+
+#contact textarea
+{
+  padding-top:20px;
+}
+
+#content-group, #superhero-group, #name-group
+{
+      margin-bottom: 30px;
+      position:relative;
+}
+
+#content-group:before {
+    content: "\e111";
+    color: #5b5b5b;
+    font: 48px/50px 'Glyphicons Halflings';
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    width: 100px;
+    text-align: center;
+    border-right: 3px solid #5b5b5b;
+}
+
+#name-group:before {
+    content: "\e008";
+    color: #5b5b5b;
+    font: 48px/50px 'Glyphicons Halflings';
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    width: 100px;
+    text-align: center;
+    border-right: 3px solid #5b5b5b;
+}
+
+#superhero-group:before {
+    content: "\2709";
+    color: #5b5b5b;
+    font: 48px/50px 'Glyphicons Halflings';
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    width: 100px;
+    text-align: center;
+    border-right: 3px solid #5b5b5b;
+}
+
+#contact button
+{
+    display: inline-block;
+    padding: 18px 36px;
+    border-radius: 4px;
+    font-size: 24px;
+    line-height: 1em;
+    border: 3px solid #5b5b5b;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+    color: #000;
+    background: none;
+    -webkit-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    width:auto;
+}
+
+#contact button:hover {
+    background: #5b5b5b;
+    color: #fff;
+}
+
+.form-send
+{
+  text-align: center;
+}
+
+.navbar-default
+{
+  background-color:#ffffff;
+  border:none;
+  margin-bottom:0;
+}
+
+#contact .has-error input, #contact .has-error textarea
+{
+  border-color: #e43b20;
+}
+
+.current-work.row
+{
+  margin:0;
+}
+
+.current-work.row > div
+{
+  margin:0;
+  padding:0;
+}
+
+.latest-work-container
+{
+  width:25%;
+  float:none;
+  vertical-align: top;
+  display:inline-block;
+}
+
+.latest-work-container .imageBox
+{
+  max-height:350px;
+  overflow:hidden;
+  vertical-align: top;
+}
+
+.latest-work-container h3
+{
+    font: bold 36px/1em 'Roboto';
+    color: #7a7a7a;
+    text-transform: uppercase;
+    margin: 20px 0 1px 0;
+}
+
+.latest-work-container h4
+{
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 1em;
+    margin: 0 0 20px 0;
+    color: #7a7a7a;
+}
+
+.latest-work-container .imageBox img
+{
+  -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.latest-work-container .imageBox.custom-hover:hover img {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+@media (max-width:767px)
+{
+  .hero-box
+  {
+        padding: 63px 0 63px 0;
+  }
+
+  .ng-sticky-fixed
+  {
+    height:auto;
+  }
+
+  .all-skills div
+  {
+    font-size:18px;
+  }
+
+  .all-skills div i
+  {
+    font-size:30px;
+  }
+
+  .private-work-content:hover .caption p
+  {
+    padding:0 10px;
+  }
 }
 
 @media (min-width: 767px)

@@ -4,17 +4,24 @@ function HomeController(BlogService, PageService, MetadataService, $scope, $http
     var vm = this;
     //console.log("here");
     vm.featuredPosts = [];
+    vm.latestPosts = [];
     vm.allPages = [];
 
     BlogService.allPosts().then(function(posts) {
         vm.featuredPosts = posts;
-        console.log(posts);
+        //console.log(posts);
+        
+    });
+
+    BlogService.allLatest().then(function(latest) {
+        vm.latestPosts = latest;
+        //console.log(posts);
         
     });
 
     PageService.allPages().then(function(pages){
     	vm.allPages = pages;
-        
+        console.log(pages);
     });
 
     PageService.page(2).then(function(about) {
@@ -23,9 +30,14 @@ function HomeController(BlogService, PageService, MetadataService, $scope, $http
 
     });
 
+    PageService.page(83).then(function(cv) {
+        vm.cv = cv;
+        //console.log(vm.about);
+
+    });
+
     PageService.page(4).then(function(post) {
         vm.post = post;
-        
 
     });
 

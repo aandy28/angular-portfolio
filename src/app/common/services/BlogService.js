@@ -17,6 +17,10 @@ function BlogService($http, $sce, config) {
         return getData('posts?filter[category_name]=post&filter[tag]=' + tag);
     }
 
+    function allLatest() {
+        return getData('posts?filter[category_name]=curPost');
+    }
+
     function allPostsBySearchTerm(searchTerm) {
         return getData('posts?filter[category_name]=post&filter[s]=' + searchTerm);
     }
@@ -54,6 +58,7 @@ function BlogService($http, $sce, config) {
         result.title = $sce.trustAsHtml(result.title.rendered);
         result.excerpt = $sce.trustAsHtml(result.excerpt.rendered);
         result.date = Date.parse(result.date);
+        //console.log(result);
         result.content = $sce.trustAsHtml(result.content.rendered);
         return result;
     }
@@ -61,6 +66,7 @@ function BlogService($http, $sce, config) {
     return {
         allPosts: allPosts,
         allPostsByTag: allPostsByTag,
+        allLatest: allLatest,
         allPostsBySearchTerm: allPostsBySearchTerm,
         featuredPosts: featuredPosts,
         post: post
