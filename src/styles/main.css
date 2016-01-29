@@ -288,7 +288,7 @@ img
   transition: all 0.4s ease; 
 }
 
-#work .post-container:nth-child(6) .private-work-content:hover .caption .post-content 
+#work .post-container:nth-child(1) .private-work-content:hover .caption .post-content 
 {
   opacity: 1;
   -webkit-transform: translate3d(0, -120%, 0) translate3d(0, 150%, 0);
@@ -333,8 +333,49 @@ img
   font-size:40px;
   margin-top:10px;
   display:block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
+.all-skills div i:before
+{
+ /* -webkit-animation-name: hvr-icon-bob-float, hvr-icon-bob;
+  animation-name: hvr-icon-bob-float, hvr-icon-bob;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  /*-webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;*/
+  /*-webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;*/
+}
+
+.all-skills div i:hover
+{
+  /*color:yellow;*/
+}
+
+.about-me
+{
+  background: #f1f1f1;
+  color: #444444;
+}
+
+.page-break
+{
+  padding:70px 0;
+}
+
+.my-work-wrapper
+{
+  background-color: #1abc9c;
+  padding: 50px 0 30px 0;
+}
 #contactFooter
 {
   margin:25px 0;
@@ -462,6 +503,11 @@ img
   padding:0;
 }
 
+.current-work.row > div.page-break
+{
+  padding:70px 0;
+}
+
 .latest-work-container
 {
   width:25%;
@@ -560,13 +606,13 @@ img
     font-size:28px;
   }
 
-  #work .post-container:nth-child(6) .private-work-content:hover .caption .post-content
+  #work .post-container:nth-child(1) .private-work-content:hover .caption .post-content
   {
       -webkit-transform: translate3d(0, -140%, 0) translate3d(0, 150%, 0);
       transform: translate3d(0, -140%, 0) translate3d(0, 150%, 0);
   }
 
-  #work .post-container:nth-child(1) .private-work-content:hover .caption .post-content
+  #work .post-container:nth-child(6) .private-work-content:hover .caption .post-content
   {
       -webkit-transform: translate3d(0, -120%, 0) translate3d(0, 150%, 0);
       transform: translate3d(0, -120%, 0) translate3d(0, 150%, 0);
@@ -576,7 +622,7 @@ img
   {
     font-size: 36px;
   }
-  #work .post-container:nth-child(6) .private-work-content:hover .caption .post-content p
+  #work .post-container:nth-child(1) .private-work-content:hover .caption .post-content p
   {
     font-size:12px;
   }
@@ -586,5 +632,54 @@ img
 {
   .site-branding {
       margin-bottom: 215px;
+  }
+}
+
+/* Icon Bob */
+@-webkit-keyframes hvr-icon-bob {
+  0% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes hvr-icon-bob {
+  0% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@-webkit-keyframes hvr-icon-bob-float {
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes hvr-icon-bob-float {
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
   }
 }

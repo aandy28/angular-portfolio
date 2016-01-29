@@ -37,43 +37,57 @@
         </div>
     </div>
 </div>
+<div class="about-me">
 <div class="container">
     <div class="info-top margin-bottom" id="about">
         <h2>About Me</h2>
         <div class="post-body about-top" ng-bind-html="vm.about.content"></div>
     </div>
-    <div class="blog-posts-top margin-bottom" id="work">
-        <h2>My Work</h2>
-        <p class="center">Creating fully responsive standard based sites to cover all the clients' needs.</p>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 post-container" ng-repeat="post in vm.featuredPosts">
-                <div class="private-work-content custom-hover">
-                    <div class="">
-                        <img src="{{post.better_featured_image.source_url}}" />
-                    </div>
-                    <div class="caption">
-                        <div>
-                            <h4 class="post-title">{{ post.title }}</h4>
-                            <div class="post-content part" ng-bind-html="post.content"></div>
+</div>
+</div>
+
+<div class="container page-break">
+    <h2>My Work</h2>
+            <p class="center">Creating fully responsive standard based sites to cover all the clients' needs.</p>
+</div>
+
+<div class="my-work-wrapper">
+    <div class="container">
+        <div class="blog-posts-top margin-bottom" id="work">
+            
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 post-container" ng-repeat="post in vm.featuredPosts | orderBy:'date'">
+                
+                    <div class="private-work-content custom-hover">
+                        <div class="">
+                            <img src="{{post.better_featured_image.source_url}}" />
+                        </div>
+                        <div class="caption">
+                            <div>
+                                <h4 class="post-title">{{ post.title }}</h4>
+                                <div class="post-content part" ng-bind-html="post.content"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
-<div class="current-work row">
+</div>
+<!-- <div class="current-work row">
+<div class="page-break">
     <h2>Work With Current Employer</h2>
+    </div>
     <div class="col-xs-4 latest-work-container" ng-repeat="latest in vm.latestPosts">
         <div class="latest-work-content">
-            <div class="imageBox custom-hover">
+            <div class="imageBox">
                 <img src="{{latest.better_featured_image.source_url}}" alt="{{latest.title}}" />
             </div>
             <h3 class="post-title" ng-bind-html="latest.title"></h3>
             <h4>Customer Site</h4>
         </div>
     </div>
-</div>
+</div> -->
 <div class="container">
     <div class="cv-top margin-bottom" id="cv">
         <div class="post-body cv-top" ng-bind-html="vm.cv.content"></div>

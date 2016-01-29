@@ -9,13 +9,13 @@ function HomeController(BlogService, PageService, MetadataService, $scope, $http
 
     BlogService.allPosts().then(function(posts) {
         vm.featuredPosts = posts;
-        //console.log(posts);
+        console.log(vm.featuredPosts);
         
     });
 
     BlogService.allLatest().then(function(latest) {
         vm.latestPosts = latest;
-        //console.log(posts);
+        console.log(vm.latestPosts);
         
     });
 
